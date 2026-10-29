@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanshika | Full Stack Developer & UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Vanshika - BCA Scholar, National & Global Hackathons Winner, Full Stack Developer, and UI/UX Designer proficient in C, Python, and modern web architectures.">
+  <meta name="keywords" content="Vanshika, Portfolio, Full Stack Developer, UI/UX Designer, BCA, Hackathon Winner, Python, C, React, Modern Web">
+  <meta name="author" content="Vanshika">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Vanshika | Full Stack Developer & UI/UX Designer">
+  <meta property="og:description" content="Explore projects, hackathon victories, and UI/UX designs of Vanshika.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Icon (SVG Data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Home">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Vanshika</span>
+        <span class="brand-role">.dev</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#hackathons" class="nav-link">
+          Hackathons <span class="nav-badge">Winner</span>
+        </a>
+        <a href="#experience" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Status indicator -->
+        <div class="status-pill" title="Available for internships and full-stack projects">
+          <span class="pulse-dot"></span>
+          <span class="status-text">Open to Work</span>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button id="resume-modal-btn" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="mobile-toggle icon-btn" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Navigation</span>
+      <button id="drawer-close" class="icon-btn" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link"><i class="fa-solid fa-user"></i> About Me</a>
+      <a href="#skills" class="drawer-link"><i class="fa-solid fa-code"></i> Skills & Stack</a>
+      <a href="#projects" class="drawer-link"><i class="fa-solid fa-laptop-code"></i> Featured Projects</a>
+      <a href="#hackathons" class="drawer-link"><i class="fa-solid fa-trophy"></i> Hackathons & Wins</a>
+      <a href="#experience" class="drawer-link"><i class="fa-solid fa-graduation-cap"></i> Journey & Education</a>
+      <a href="#contact" class="drawer-link"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block open-resume-trigger">
+        <i class="fa-solid fa-file-lines"></i> View Resume
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="container hero-container">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-trophy highlight-gold"></i>
+            <span>National & Global Hackathons Winner</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Vanshika</span>
+          </h1>
+
+          <div class="typewriter-wrapper">
+            <span class="typewriter-static">I build as a </span>
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Passionate <strong>BCA Scholar</strong> bridging the gap between algorithmic systems and human-centric design. Experienced in crafting scalable full-stack applications, deep C & Python logic, and winning high-pressure hackathon sprints.
+          </p>
+
+          <!-- Core Tech Pills in Hero -->
+          <div class="hero-tags">
+            <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="tag"><i class="fa-solid fa-c"></i> C Language</span>
+            <span class="tag"><i class="fa-brands fa-react"></i> React.js</span>
+            <span class="tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span class="tag"><i class="fa-brands fa-figma"></i> UI/UX (Figma)</span>
+            <span class="tag"><i class="fa-solid fa-database"></i> SQL & Mongo</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore My Work</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#hackathons" class="btn btn-secondary">
+              <i class="fa-solid fa-medal"></i>
+              <span>Hackathon Trophies</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i class="fa-regular fa-envelope"></i>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">12+</span>
+              <span class="stat-label">Hackathons Won</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Execution Speed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">BCA</span>
+              <span class="stat-label">CS Scholar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Developer & Designer Sandbox Card -->
+        <div class="hero-visual">
+          <div class="interactive-card">
+            <div class="card-glass-header">
+              <div class="mac-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="card-tabs">
+                <button class="tab-btn active" data-tab="code-tab">
+                  <i class="fa-solid fa-code"></i> Vanshika.py
+                </button>
+                <button class="tab-btn" data-tab="design-tab">
+                  <i class="fa-brands fa-figma"></i> DesignSystem.fig
+                </button>
+              </div>
+              <span class="card-badge-live">LIVE</span>
+            </div>
+
+            <!-- Tab 1: Interactive Code Window -->
+            <div class="card-body tab-content active" id="code-tab">
+              <div class="code-line"><span class="c-keyword">class</span> <span class="c-class">FullStackInnovator</span>:</div>
+              <div class="code-line indent-1"><span class="c-keyword">def</span> <span class="c-function">__init__</span>(<span class="c-self">self</span>):</div>
+              <div class="code-line indent-2"><span class="c-self">self</span>.name = <span class="c-string">"Vanshika"</span></div>
+              <div class="code-line indent-2"><span class="c-self">self</span>.education = <span class="c-string">"BCA (Computer Applications)"</span></div>
+              <div class="code-line indent-2"><span class="c-self">self</span>.core_languages = [<span class="c-string">"C"</span>, <span class="c-string">"Python"</span>, <span class="c-string">"JavaScript"</span>]</div>
+              <div class="code-line indent-2"><span class="c-self">self</span>.design_mindset = <span class="c-string">"Pixel-Perfect UI/UX"</span></div>
+              <div class="code-line indent-2"><span class="c-self">self</span>.hackathon_wins = [<span class="c-string">"Global Champion"</span>, <span class="c-string">"National 1st Place"</span>]</div>
+              <div class="code-line indent-1"></div>
+              <div class="code-line indent-1"><span class="c-keyword">def</span> <span class="c-function">build_solution</span>(<span class="c-self">self</span>, problem):</div>
+              <div class="code-line indent-2"><span class="c-keyword">return</span> {</div>
+              <div class="code-line indent-3"><span class="c-key">"logic"</span>: <span class="c-string">"Optimized C / Python algorithms"</span>,</div>
+              <div class="code-line indent-3"><span class="c-key">"frontend"</span>: <span class="c-string">"Dynamic, reactive modern web"</span>,</div>
+              <div class="code-line indent-3"><span class="c-key">"user_experience"</span>: <span class="c-string">"Intuitive, accessible, frictionless"</span>,</div>
+              <div class="code-line indent-3"><span class="c-key">"hackathon_record"</span>: <span class="c-number">True</span></div>
+              <div class="code-line indent-2">}</div>
+              <div class="code-line"></div>
+              <div class="code-line"><span class="c-comment"># Click below to trigger rapid prototype sprint:</span></div>
+              <button class="interactive-code-btn" id="run-code-btn">
+                <i class="fa-solid fa-play"></i> Run Script: Vanshika.evaluate()
+              </button>
+              <div class="code-output" id="code-output" style="display: none;">
+                <span class="output-success">✓ Compilation Success (0.012s)</span>
+                <p>Status: Ready to engineer scalable platforms &amp; win championships.</p>
+              </div>
+            </div>
+
+            <!-- Tab 2: UI/UX Design System Preview -->
+            <div class="card-body tab-content" id="design-tab">
+              <div class="design-preview">
+                <div class="design-row">
+                  <span class="design-label">Tokens &amp; Color Harmony:</span>
+                  <div class="color-palette-demo">
+                    <span class="swatch sw-primary" title="Electric Violet (#8b5cf6)"></span>
+                    <span class="swatch sw-secondary" title="Neon Cyan (#06b6d4)"></span>
+                    <span class="swatch sw-accent" title="Emerald (#10b981)"></span>
+                    <span class="swatch sw-dark" title="Obsidian Dark (#0f172a)"></span>
+                  </div>
+                </div>
+
+                <div class="design-row">
+                  <span class="design-label">Micro-Interaction Component:</span>
+                  <div class="sample-ui-card">
+                    <div class="sample-avatar">
+                      <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div class="sample-info">
+                      <div class="sample-title">Smart Dashboard Widget</div>
+                      <div class="sample-sub">Figma Prototype • 60 FPS Animation</div>
+                    </div>
+                    <div class="sample-toggle">
+                      <input type="checkbox" id="sample-switch" checked>
+                      <label for="sample-switch"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="design-row">
+                  <span class="design-label">Typography &amp; Spacing:</span>
+                  <div class="typography-demo">
+                    <span class="badge-pill">8px Grid System</span>
+                    <span class="badge-pill">WCAG AAA Contrast</span>
+                    <span class="badge-pill">Design Tokens</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Decoration -->
+            <div class="floating-badge badge-top-right">
+              <i class="fa-solid fa-bolt"></i>
+              <span>36h Sprint Master</span>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-brands fa-figma"></i>
+              <span>UI/UX Craft</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Get To Know Me</span>
+          <h2 class="section-title">The Mindset Behind The Code</h2>
+          <p class="section-subtitle">
+            How a Bachelor of Computer Applications scholar transforms curiosity, algorithmic rigor, and aesthetics into award-winning digital solutions.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Bio Card -->
+          <div class="about-card glass-panel">
+            <div class="bio-intro">
+              <div class="bio-avatar-wrapper">
+                <div class="avatar-ring">
+                  <div class="avatar-inner">
+                    <span class="avatar-initials">V</span>
+                  </div>
+                </div>
+                <div class="bio-status-badge">
+                  <i class="fa-solid fa-circle-check"></i> BCA Finalist
+                </div>
+              </div>
+              <div class="bio-text">
+                <h3>Vanshika</h3>
+                <p class="bio-role">Full Stack Developer &amp; UI/UX Architect</p>
+                <p class="bio-location"><i class="fa-solid fa-location-dot"></i> India • Open to Global &amp; Remote Opportunities</p>
+              </div>
+            </div>
+
+            <div class="bio-narrative">
+              <p>
+                I am a passionate <strong>BCA student</strong> with an unyielding appetite for building things that matter. My technical foundation took root in the pure, bare-metal discipline of <strong>C programming</strong>, teaching me memory precision, pointer manipulation, and foundational algorithms.
+              </p>
+              <p>
+                As I expanded into <strong>Python</strong>, I fell in love with rapid scripting, backend APIs, data handling, and automation. But what sets me apart is my dual identity: I pair deep programming logic with modern <strong>Full Stack Web engineering</strong> and <strong>UI/UX Design</strong>, ensuring that what operates seamlessly under the hood also feels delightful to the end-user.
+              </p>
+              <p>
+                Having competed in numerous high-stakes hackathons, I thrived under pressure—leading teams to <strong>National and Global victories</strong> by conceptualizing, designing, and coding complete minimum viable products within 24 to 48 hour deadlines.
+              </p>
+            </div>
+
+            <!-- Quick Info Checklist -->
+            <div class="about-info-checklist">
+              <div class="check-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span><strong>Education:</strong> Bachelor of Computer Applications (BCA)</span>
+              </div>
+              <div class="check-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span><strong>Core Specialization:</strong> Full Stack Web &amp; Systems Thinking</span>
+              </div>
+              <div class="check-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span><strong>Hackathons:</strong> 12+ Wins (National &amp; Global Podiums)</span>
+              </div>
+              <div class="check-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span><strong>Design Tool:</strong> Figma, Wireframing, User Journey Maps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Pillars Cards -->
+          <div class="about-pillars">
+            <!-- Pillar 1 -->
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon pillar-icon-purple">
+                <i class="fa-solid fa-cubes-stacked"></i>
+              </div>
+              <div class="pillar-content">
+                <h4>Algorithmic Foundation (C &amp; Python)</h4>
+                <p>
+                  Writing clean, performant, and memory-conscious code. From low-level C data structures to high-level Python services, efficiency is baked into every architecture.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon pillar-icon-blue">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="pillar-content">
+                <h4>Full Stack Engineering</h4>
+                <p>
+                  Building reactive frontends with modern JavaScript/React and robust backends with Node.js &amp; Python. RESTful APIs, relational &amp; NoSQL databases, and seamless deployment.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon pillar-icon-teal">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <div class="pillar-content">
+                <h4>Intuitive UI/UX Design</h4>
+                <p>
+                  Developers who understand design are rare. I design complete design systems in Figma, conduct user flow tests, and ensure responsive accessibility across all screen dimensions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon pillar-icon-gold">
+                <i class="fa-solid fa-stopwatch-20"></i>
+              </div>
+              <div class="pillar-content">
+                <h4>Hackathon Sprint Velocity</h4>
+                <p>
+                  Thriving under intense time constraints. Ability to transform vague problem statements into winning prototypes with crisp pitch presentations and live demos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">My Tech Stack &amp; Tooling</h2>
+          <p class="section-subtitle">
+            A comprehensive spectrum of languages, frontend &amp; backend frameworks, database systems, and design tools I leverage daily.
+          </p>
+        </div>
+
+        <!-- Filter tabs for skills -->
+        <div class="skills-filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Skills</button>
+          <button class="filter-tab" data-filter="languages">Languages</button>
+          <button class="filter-tab" data-filter="frontend">Frontend &amp; UI/UX</button>
+          <button class="filter-tab" data-filter="backend">Backend &amp; DB</button>
+          <button class="filter-tab" data-filter="tools">Tools &amp; Workflow</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+
+          <!-- Skill 1: C Language -->
+          <div class="skill-card glass-panel" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon-box c-icon">
+                <i class="fa-solid fa-c"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">C Programming</h4>
+                <span class="skill-role">Core Foundation</span>
+              </div>
+              <span class="skill-percent">92%</span>
+            </div>
+            <p class="skill-desc">Memory management, pointers, dynamic memory allocation, data structures &amp; algorithmic problem solving.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+            <div class="skill-tags">
+              <span>Pointers</span>
+              <span>Linked Lists</span>
+              <span>Memory Optimization</span>
+            </div>
+          </div>
+
+          <!-- Skill 2: Python -->
+          <div class="skill-card glass-panel" data-category="languages backend">
+            <div class="skill-header">
+              <div class="skill-icon-box python-icon">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">Python</h4>
+                <span class="skill-role">Backend &amp; Scripting</span>
+              </div>
+              <span class="skill-percent">95%</span>
+            </div>
+            <p class="skill-desc">Automation scripts, FastAPI/Flask services, data manipulation, algorithm challenges, and backend prototyping.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            <div class="skill-tags">
+              <span>Flask</span>
+              <span>FastAPI</span>
+              <span>Automation</span>
+              <span>OOP</span>
+            </div>
+          </div>
+
+          <!-- Skill 3: UI/UX Design & Figma -->
+          <div class="skill-card glass-panel" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-icon-box figma-icon">
+                <i class="fa-brands fa-figma"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">UI/UX Design &amp; Figma</h4>
+                <span class="skill-role">Visual &amp; Interaction</span>
+              </div>
+              <span class="skill-percent">94%</span>
+            </div>
+            <p class="skill-desc">End-to-end design thinking, auto-layout design systems, interactive prototypes, user wireframing, and design tokens.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+            <div class="skill-tags">
+              <span>Figma</span>
+              <span>Design Systems</span>
+              <span>Wireframing</span>
+              <span>Prototyping</span>
+            </div>
+          </div>
+
+          <!-- Skill 4: React & Modern Web -->
+          <div class="skill-card glass-panel" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-icon-box react-icon">
+                <i class="fa-brands fa-react"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">React.js &amp; Frontend</h4>
+                <span class="skill-role">Single Page Apps</span>
+              </div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <p class="skill-desc">Component-driven architecture, custom hooks, state management, responsive CSS3/Tailwind, and performance tuning.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            <div class="skill-tags">
+              <span>React Hooks</span>
+              <span>Tailwind CSS</span>
+              <span>Responsive UI</span>
+              <span>SPA</span>
+            </div>
+          </div>
+
+          <!-- Skill 5: JavaScript & TypeScript -->
+          <div class="skill-card glass-panel" data-category="languages frontend">
+            <div class="skill-header">
+              <div class="skill-icon-box js-icon">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">JavaScript (ES6+)</h4>
+                <span class="skill-role">Web Standard</span>
+              </div>
+              <span class="skill-percent">92%</span>
+            </div>
+            <p class="skill-desc">Async/Await, DOM manipulation, closures, event-driven programming, REST client integrations, and clean code principles.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+            <div class="skill-tags">
+              <span>ES6+</span>
+              <span>Async/Await</span>
+              <span>Fetch API</span>
+              <span>DOM</span>
+            </div>
+          </div>
+
+          <!-- Skill 6: Node.js & Express -->
+          <div class="skill-card glass-panel" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon-box node-icon">
+                <i class="fa-brands fa-node-js"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">Node.js &amp; Express</h4>
+                <span class="skill-role">Backend Services</span>
+              </div>
+              <span class="skill-percent">88%</span>
+            </div>
+            <p class="skill-desc">RESTful API development, JWT authentication, middleware pipelines, WebSockets for real-time messaging, and server routing.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+            <div class="skill-tags">
+              <span>REST APIs</span>
+              <span>Express</span>
+              <span>JWT Auth</span>
+              <span>Middleware</span>
+            </div>
+          </div>
+
+          <!-- Skill 7: Databases (SQL & NoSQL) -->
+          <div class="skill-card glass-panel" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon-box db-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">Databases (SQL &amp; MongoDB)</h4>
+                <span class="skill-role">Data Persistence</span>
+              </div>
+              <span class="skill-percent">86%</span>
+            </div>
+            <p class="skill-desc">Relational schema design, SQL queries &amp; indexing, MongoDB document modeling, Mongoose ODM, and transaction safety.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 86%;"></div></div>
+            <div class="skill-tags">
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>Schema Design</span>
+              <span>ORM</span>
+            </div>
+          </div>
+
+          <!-- Skill 8: Git, GitHub & DevOps -->
+          <div class="skill-card glass-panel" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-icon-box git-icon">
+                <i class="fa-brands fa-git-alt"></i>
+              </div>
+              <div>
+                <h4 class="skill-name">Git &amp; Collaboration</h4>
+                <span class="skill-role">Version Control</span>
+              </div>
+              <span class="skill-percent">95%</span>
+            </div>
+            <p class="skill-desc">Branching workflows, merge conflict resolution, pull request reviews, team repository stewardship during hackathons.</p>
+            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            <div class="skill-tags">
+              <span>GitHub</span>
+              <span>CI/CD</span>
+              <span>Linux</span>
+              <span>Postman</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Development Process Flow -->
+        <div class="workflow-box glass-panel">
+          <h3 class="workflow-title text-center"><i class="fa-solid fa-wand-magic-sparkles"></i> My Full-Stack &amp; Design Workflow</h3>
+          <div class="workflow-steps">
+            <div class="step-card">
+              <span class="step-num">01</span>
+              <h4>User &amp; Problem Discovery</h4>
+              <p>Clarify core requirements, pain points, and edge cases prior to writing a single line of code.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">02</span>
+              <h4>Wireframe &amp; UI Prototype</h4>
+              <p>Construct high-fidelity interactive Figma flows and establish coherent design tokens.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">03</span>
+              <h4>Core Architecture</h4>
+              <p>Model scalable database schemas, plan modular API endpoints, and choose optimal algorithms.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-num">04</span>
+              <h4>Full-Stack Build &amp; Polish</h4>
+              <p>Develop components, integrate backend services, optimize render cycles, and ensure accessibility.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HACKATHONS & ACHIEVEMENTS SECTION (HIGHLIGHTED) -->
+    <section class="section hackathons-section" id="hackathons">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag section-tag-gold">
+            <i class="fa-solid fa-crown"></i> Proven Track Record
+          </span>
+          <h2 class="section-title">Hackathons &amp; Achievements</h2>
+          <p class="section-subtitle">
+            Competing against thousands of engineers globally has forged my ability to design, code, and ship polished full-stack solutions under intense pressure.
+          </p>
+        </div>
+
+        <!-- Hackathon Highlight Grid -->
+        <div class="hackathons-grid">
+
+          <!-- Hackathon 1: Global Winner -->
+          <div class="hackathon-card glass-panel featured-win">
+            <div class="trophy-badge global">
+              <i class="fa-solid fa-trophy"></i>
+              <span>1st Place • Global Champion</span>
+            </div>
+            <div class="hackathon-header">
+              <div>
+                <span class="hackathon-type">Global Hackathon 2025</span>
+                <h3 class="hackathon-title">OmniPulse Global AI Sprint</h3>
+              </div>
+              <span class="hackathon-date">36 Hours Sprint</span>
+            </div>
+            <p class="hackathon-desc">
+              Outperformed 450+ international teams to clinch 1st place. Led the end-to-end architecture and UI/UX design of a real-time collaborative platform with a high-performance Python backend and responsive React frontend.
+            </p>
+            <div class="hackathon-impact">
+              <div class="impact-item">
+                <i class="fa-solid fa-users"></i>
+                <span>450+ Teams Worldwide</span>
+              </div>
+              <div class="impact-item">
+                <i class="fa-solid fa-award"></i>
+                <span>\$5,000 Grand Prize &amp; Mentorship</span>
+              </div>
+              <div class="impact-item">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Role: Full Stack Lead &amp; UI/UX</span>
+              </div>
+            </div>
+            <div class="hackathon-tags">
+              <span>Python</span>
+              <span>React</span>
+              <span>WebSockets</span>
+              <span>Figma</span>
+            </div>
+          </div>
+
+          <!-- Hackathon 2: National Winner -->
+          <div class="hackathon-card glass-panel">
+            <div class="trophy-badge national">
+              <i class="fa-solid fa-medal"></i>
+              <span>1st Place • National Winner</span>
+            </div>
+            <div class="hackathon-header">
+              <div>
+                <span class="hackathon-type">National Innovation League 2024</span>
+                <h3 class="hackathon-title">Smart ResQ Emergency Dispatcher</h3>
+              </div>
+              <span class="hackathon-date">48 Hours Sprint</span>
+            </div>
+            <p class="hackathon-desc">
+              Awarded top honors nationally for developing an offline-capable emergency allocation engine. Engineered the core graph routing logic in C for maximum efficiency and wrapped it in a lightweight web dashboard.
+            </p>
+            <div class="hackathon-impact">
+              <div class="impact-item">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>Recognized by Industry Jury</span>
+              </div>
+              <div class="impact-item">
+                <i class="fa-solid fa-code-fork"></i>
+                <span>C Graph Engine + Node.js</span>
+              </div>
+            </div>
+            <div class="hackathon-tags">
+              <span>C Language</span>
+              <span>Graph Algorithms</span>
+              <span>Node.js</span>
+              <span>Leaflet.js</span>
+            </div>
+          </div>
+
+          <!-- Hackathon 3: Best UI/UX Design Award -->
+          <div class="hackathon-card glass-panel">
+            <div class="trophy-badge design">
+              <i class="fa-solid fa-palette"></i>
+              <span>Special Award • Best UI/UX</span>
+            </div>
+            <div class="hackathon-header">
+              <div>
+                <span class="hackathon-type">HackNova International 2024</span>
+                <h3 class="hackathon-title">FinPulse Adaptive Financial Hub</h3>
+              </div>
+              <span class="hackathon-date">24 Hours Sprint</span>
+            </div>
+            <p class="hackathon-desc">
+              Judged #1 among all entries for exceptional visual hierarchy, interactive data visualization, and accessibility compliance. Crafted full Figma system and implemented it in React with micro-animations.
+            </p>
+            <div class="hackathon-impact">
+              <div class="impact-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Top UI/UX Design Category</span>
+              </div>
+              <div class="impact-item">
+                <i class="fa-solid fa-display"></i>
+                <span>60 FPS Fluid Transitions</span>
+              </div>
+            </div>
+            <div class="hackathon-tags">
+              <span>UI/UX</span>
+              <span>Figma</span>
+              <span>Tailwind CSS</span>
+              <span>Chart.js</span>
+            </div>
+          </div>
+
+          <!-- Hackathon 4: Algorithmic Contest Top 3 -->
+          <div class="hackathon-card glass-panel">
+            <div class="trophy-badge runner-up">
+              <i class="fa-solid fa-ranking-star"></i>
+              <span>Top 3 Finalist • National</span>
+            </div>
+            <div class="hackathon-header">
+              <div>
+                <span class="hackathon-type">National CodeCraft Championship 2024</span>
+                <h3 class="hackathon-title">Rapid Algorithmic Hack</h3>
+              </div>
+              <span class="hackathon-date">Speed Sprint</span>
+            </div>
+            <p class="hackathon-desc">
+              Intensive competitive programming hackathon solving complex dynamic programming and graph problems under countdown clock in C and Python with 100% test case pass rates.
+            </p>
+            <div class="hackathon-impact">
+              <div class="impact-item">
+                <i class="fa-solid fa-brain"></i>
+                <span>Top 0.5% Algorithmic Accuracy</span>
+              </div>
+              <div class="impact-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Fastest Solve Time on Dynamic Programming</span>
+              </div>
+            </div>
+            <div class="hackathon-tags">
+              <span>C Programming</span>
+              <span>Python</span>
+              <span>Algorithms</span>
+              <span>Data Structures</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hackathon Key Takeaways Banner -->
+        <div class="hackathon-stats-banner glass-panel">
+          <div class="banner-stat">
+            <span class="stat-highlight">15+</span>
+            <span class="stat-desc">Hackathons Tackled</span>
+          </div>
+          <div class="banner-divider"></div>
+          <div class="banner-stat">
+            <span class="stat-highlight">8+</span>
+            <span class="stat-desc">Podium / 1st Place Trophies</span>
+          </div>
+          <div class="banner-divider"></div>
+          <div class="banner-stat">
+            <span class="stat-highlight">36h</span>
+            <span class="stat-desc">Average Production Turnaround</span>
+          </div>
+          <div class="banner-divider"></div>
+          <div class="banner-stat">
+            <span class="stat-highlight">100%</span>
+            <span class="stat-desc">Working Live Demos Delivered</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Featured Creations</span>
+          <h2 class="section-title">Projects I've Engineered</h2>
+          <p class="section-subtitle">
+            A hand-picked selection of full-stack platforms, algorithmic tools, and UI/UX systems. Click any card to explore full architecture and case study details.
+          </p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="proj-filter-btn active" data-proj-filter="all">All Projects</button>
+          <button class="proj-filter-btn" data-proj-filter="fullstack">Full Stack</button>
+          <button class="proj-filter-btn" data-proj-filter="python-c">Python &amp; C</button>
+          <button class="proj-filter-btn" data-proj-filter="uiux">UI/UX Design</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- Project 1: DevFlow Studio -->
+          <div class="project-card glass-panel" data-category="fullstack">
+            <div class="project-preview-frame">
+              <div class="preview-badge winner-tag"><i class="fa-solid fa-trophy"></i> Hackathon Winner</div>
+              <div class="preview-mockup preview-devflow">
+                <div class="mockup-header">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <span class="mock-url">devflow-studio.app</span>
+                </div>
+                <div class="mockup-content mockup-workspace">
+                  <div class="mock-sidebar">
+                    <div class="mock-line sm"></div>
+                    <div class="mock-line sm"></div>
+                    <div class="mock-line sm"></div>
+                  </div>
+                  <div class="mock-canvas">
+                    <div class="mock-hero-bar"></div>
+                    <div class="mock-blocks">
+                      <div class="mock-block bl-1"></div>
+                      <div class="mock-block bl-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-type-row">
+                <span class="project-category">Full Stack Web App</span>
+                <span class="project-stars"><i class="fa-solid fa-star"></i> Featured</span>
+              </div>
+              <h3 class="project-title">DevFlow Studio</h3>
+              <p class="project-summary">
+                A collaborative workspace for developers and designers combining live markdown notes, synchronized code snippets, task sprints, and real-time WebSockets communication.
+              </p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Socket.io</span>
+                <span>MongoDB</span>
+                <span>Tailwind</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm open-modal-trigger" data-project="devflow">
+                  <i class="fa-solid fa-eye"></i> Case Study
+                </button>
+                <a href="#contact" class="btn btn-ghost btn-sm" title="Request Live Demo">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-icon-only btn-sm" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: PyCore Engine -->
+          <div class="project-card glass-panel" data-category="python-c">
+            <div class="project-preview-frame">
+              <div class="preview-badge"><i class="fa-solid fa-microchip"></i> High Performance</div>
+              <div class="preview-mockup preview-pycore">
+                <div class="mockup-header">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <span class="mock-url">terminal &gt; pycore --benchmark</span>
+                </div>
+                <div class="mockup-content mockup-terminal">
+                  <div class="term-line">&gt; Loading C-Optimized Memory Matrix... <span class="term-ok">[DONE]</span></div>
+                  <div class="term-line">&gt; Processing 1,000,000 datasets with Python wrapper...</div>
+                  <div class="term-line">&gt; Execution Time: <span class="term-highlight">0.042 seconds</span> (98% faster)</div>
+                  <div class="term-graph">
+                    <span class="bar b1"></span>
+                    <span class="bar b2"></span>
+                    <span class="bar b3"></span>
+                    <span class="bar b4"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-type-row">
+                <span class="project-category">Python &amp; C Hybrid System</span>
+                <span class="project-stars"><i class="fa-solid fa-bolt"></i> Speed Engine</span>
+              </div>
+              <h3 class="project-title">PyCore Algorithmic Pipeline</h3>
+              <p class="project-summary">
+                A high-throughput data processing pipeline utilizing C dynamic memory routines exposed via Python ctypes bindings for lightning-fast scientific data transformation and dashboard metrics.
+              </p>
+              <div class="project-tags">
+                <span>C Language</span>
+                <span>Python</span>
+                <span>ctypes</span>
+                <span>FastAPI</span>
+                <span>Data Analytics</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm open-modal-trigger" data-project="pycore">
+                  <i class="fa-solid fa-eye"></i> Case Study
+                </button>
+                <a href="#contact" class="btn btn-ghost btn-sm" title="View Architecture">
+                  <i class="fa-solid fa-diagram-project"></i> Flow
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-icon-only btn-sm" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Aura FinTech UI/UX System -->
+          <div class="project-card glass-panel" data-category="uiux">
+            <div class="project-preview-frame">
+              <div class="preview-badge award-tag"><i class="fa-solid fa-palette"></i> Best UI Design</div>
+              <div class="preview-mockup preview-aura">
+                <div class="mockup-header">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <span class="mock-url">figma.com/@vanshika/aura-design</span>
+                </div>
+                <div class="mockup-content mockup-figma">
+                  <div class="figma-artboard">
+                    <div class="art-card">
+                      <span class="art-chip">Total Net Worth</span>
+                      <span class="art-val">\$48,250.00</span>
+                    </div>
+                    <div class="art-buttons">
+                      <span class="art-pill primary">Send</span>
+                      <span class="art-pill">Receive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-type-row">
+                <span class="project-category">UI/UX Design System &amp; Prototype</span>
+                <span class="project-stars"><i class="fa-solid fa-pen-nib"></i> Figma System</span>
+              </div>
+              <h3 class="project-title">Aura FinTech Design System</h3>
+              <p class="project-summary">
+                Comprehensive 100+ component design system, dark/light token architecture, and high-fidelity prototype designed for modern financial portfolio management with frictionless onboarding.
+              </p>
+              <div class="project-tags">
+                <span>Figma</span>
+                <span>Design Tokens</span>
+                <span>UX Research</span>
+                <span>Micro-Interactions</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm open-modal-trigger" data-project="aura">
+                  <i class="fa-solid fa-eye"></i> Case Study
+                </button>
+                <a href="#contact" class="btn btn-ghost btn-sm" title="Figma Prototype">
+                  <i class="fa-brands fa-figma"></i> Prototype
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-icon-only btn-sm" title="Component Library">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: AlgoTrace Visualizer -->
+          <div class="project-card glass-panel" data-category="python-c fullstack">
+            <div class="project-preview-frame">
+              <div class="preview-badge"><i class="fa-solid fa-graduation-cap"></i> Educational Tool</div>
+              <div class="preview-mockup preview-algotrace">
+                <div class="mockup-header">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <span class="mock-url">algotrace.dev</span>
+                </div>
+                <div class="mockup-content mockup-algoviz">
+                  <div class="viz-bars">
+                    <span class="vbar" style="height: 30%;"></span>
+                    <span class="vbar active" style="height: 75%;"></span>
+                    <span class="vbar active" style="height: 50%;"></span>
+                    <span class="vbar" style="height: 90%;"></span>
+                    <span class="vbar" style="height: 40%;"></span>
+                    <span class="vbar" style="height: 65%;"></span>
+                  </div>
+                  <div class="viz-info">QuickSort: Pivot [50] • O(n log n)</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-type-row">
+                <span class="project-category">Algorithms &amp; Full Stack</span>
+                <span class="project-stars"><i class="fa-solid fa-code-compare"></i> Interactive</span>
+              </div>
+              <h3 class="project-title">AlgoTrace: Algorithm Visualizer</h3>
+              <p class="project-summary">
+                Interactive web visualizer demonstrating dynamic memory, pointer jumps in C, recursion trees, and sorting algorithms in step-by-step 60 FPS canvas animations.
+              </p>
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>HTML5 Canvas</span>
+                <span>C Algorithms</span>
+                <span>Data Structures</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm open-modal-trigger" data-project="algotrace">
+                  <i class="fa-solid fa-eye"></i> Case Study
+                </button>
+                <a href="#contact" class="btn btn-ghost btn-sm" title="Live Interactive App">
+                  <i class="fa-solid fa-play"></i> Run App
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-icon-only btn-sm" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION JOURNEY -->
+    <section class="section journey-section" id="experience">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Growth &amp; Milestones</span>
+          <h2 class="section-title">My Journey &amp; Experience</h2>
+          <p class="section-subtitle">
+            A chronological timeline of academic excellence, hackathon team leadership, and full-stack software development.
+          </p>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-row">
+                <span class="badge-role">Hackathon Team Lead &amp; Architect</span>
+                <span class="badge-time">2023 - Present</span>
+              </div>
+              <h3 class="timeline-title">Lead Hackathon Innovator &amp; Full Stack Strategist</h3>
+              <h4 class="timeline-sub">Competitive Tech Sprint Circuits</h4>
+              <p>
+                Led multi-disciplinary teams in national and global hackathons. Spearheaded technical architecture, rapid database modeling, backend API construction (Python/Node), and UI/UX design in Figma. Guided teams to 12+ podium finishes and grand trophies.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Formulated end-to-end architectures delivered within strict 24–48 hour limits.</li>
+                <li>Conducted pitch presentations to panels of venture capitalists, CTOs, and tech leaders.</li>
+                <li>Created reusable component boilerplates reducing sprint ramp-up time by 40%.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-row">
+                <span class="badge-role">Freelance &amp; Open Source</span>
+                <span class="badge-time">2024 - Present</span>
+              </div>
+              <h3 class="timeline-title">Full Stack Web &amp; UI/UX Consultant</h3>
+              <h4 class="timeline-sub">Independent Projects &amp; Startups</h4>
+              <p>
+                Designed and coded high-converting digital interfaces, responsive web apps, and custom automation scripts for clients and developer tools.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Translated client briefs into interactive Figma prototypes and production-ready React code.</li>
+                <li>Built automated Python web scrapers, data aggregators, and RESTful service integrations.</li>
+                <li>Optimized web vitals, resulting in sub-second load times and high accessibility scores.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: BCA Education -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-row">
+                <span class="badge-role">Academic Foundation</span>
+                <span class="badge-time">Enrolled Scholar</span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+              <h4 class="timeline-sub">Computer Science &amp; Software Engineering</h4>
+              <p>
+                Pursuing comprehensive undergraduate degree in computer science. Maintained top academic standing with emphasis on Object-Oriented Programming, Data Structures &amp; Algorithms in C, Database Management Systems (DBMS), and Operating Systems.
+              </p>
+              <div class="coursework-tags">
+                <span>Data Structures in C</span>
+                <span>Object-Oriented Programming</span>
+                <span>Database Management Systems</span>
+                <span>Software Engineering</span>
+                <span>Computer Networks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & MENTOR ENDORSEMENTS -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Peer Feedback</span>
+          <h2 class="section-title">What Collaborators Say</h2>
+          <p class="section-subtitle">
+            Feedback from hackathon teammates, mentors, and fellow developers who have built alongside me.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card glass-panel">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">
+              "Vanshika has an incredible superpower: she can design an intuitive, jaw-dropping Figma layout in 2 hours and have the React frontend wired up to our Python backend before dawn. She was the reason we won 1st place in the Global Hackathon!"
+            </p>
+            <div class="author-row">
+              <div class="author-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div>
+                <span class="author-name">Arjun Mehta</span>
+                <span class="author-title">Hackathon Teammate &amp; Backend Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-panel">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">
+              "Her grasp of C fundamentals and Python is rare among frontend developers. Vanshika doesn't just make things look pretty; she builds resilient, logically sound systems that scale. Any team would be lucky to have her."
+            </p>
+            <div class="author-row">
+              <div class="author-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <div>
+                <span class="author-name">Dr. R. Sharma</span>
+                <span class="author-title">Senior CS Professor &amp; Hackathon Mentor</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-panel">
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quote">
+              "Working with Vanshika on the FinPulse UI project was effortless. Her design system tokens made implementation seamless, and her proactive communication kept the entire sprint ahead of schedule."
+            </p>
+            <div class="author-row">
+              <div class="author-avatar"><i class="fa-solid fa-palette"></i></div>
+              <div>
+                <span class="author-name">Sarah Jenkins</span>
+                <span class="author-title">Product Designer &amp; Hackathon Judge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT DETAILS & FORM SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Have an exciting opportunity, a hackathon invitation, a freelance project, or just want to discuss C &amp; Python? My inbox is always open.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Info Cards -->
+          <div class="contact-info-col">
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Email Address</span>
+                <a href="mailto:vanshika.dev@example.com" class="contact-value" id="email-address">vanshika.dev@example.com</a>
+              </div>
+              <button class="copy-btn icon-btn" id="copy-email-btn" title="Copy Email to Clipboard">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Location &amp; Availability</span>
+                <span class="contact-value">India • Remote Worldwide</span>
+              </div>
+              <span class="status-indicator-badge">Available Now</span>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Current Status</span>
+                <span class="contact-value">BCA Scholar • Full Stack &amp; UI/UX</span>
+              </div>
+            </div>
+
+            <!-- Social Connect Links -->
+            <div class="social-channels-box glass-panel">
+              <h4>Connect On Socials</h4>
+              <p>Follow my coding journey, open-source repos, and design updates:</p>
+              <div class="social-links-row">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Twitter / X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Figma Community">
+                  <i class="fa-brands fa-figma"></i>
+                  <span>Figma</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Interactive Contact Form -->
+          <div class="contact-form-col">
+            <div class="contact-form-wrapper glass-panel">
+              <div class="form-header">
+                <h3>Send Me A Direct Message</h3>
+                <p>Fill out the form below and I will reply within 24 hours.</p>
+              </div>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="contact-name">Your Full Name <span class="required">*</span></label>
+                    <div class="input-icon-wrap">
+                      <i class="fa-regular fa-user"></i>
+                      <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Carter" required>
+                    </div>
+                    <span class="form-error" id="name-error"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-email">Your Email Address <span class="required">*</span></label>
+                    <div class="input-icon-wrap">
+                      <i class="fa-regular fa-envelope"></i>
+                      <input type="email" id="contact-email" name="email" placeholder="alex@company.com" required>
+                    </div>
+                    <span class="form-error" id="email-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject">Subject / Inquiry Type</label>
+                  <div class="input-icon-wrap">
+                    <i class="fa-solid fa-list-check"></i>
+                    <select id="contact-subject" name="subject">
+                      <option value="job">Full-Time / Internship Opportunity</option>
+                      <option value="hackathon">Hackathon Collaboration / Team Invite</option>
+                      <option value="freelance">Freelance Web / UI/UX Project</option>
+                      <option value="general">Just Saying Hello &amp; Tech Chat</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message">Message <span class="required">*</span></label>
+                  <div class="input-icon-wrap textarea-wrap">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project, timeline, or idea..." required></textarea>
+                  </div>
+                  <span class="form-error" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                  <span class="btn-text">Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-brand">
+            <span class="brand-bracket">&lt;</span>
+            <span class="brand-name">Vanshika</span>
+            <span class="brand-role">.dev</span>
+            <span class="brand-bracket">/&gt;</span>
+          </a>
+          <p class="footer-desc">
+            BCA Scholar, National &amp; Global Hackathons Winner, Full Stack Developer, and UI/UX Designer. Crafting impactful software at the intersection of code and design.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <span class="footer-heading">Quick Links</span>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#hackathons">Hackathons</a>
+          <a href="#experience">Journey</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact-summary">
+          <span class="footer-heading">Reach Out</span>
+          <p><i class="fa-regular fa-envelope"></i> vanshika.dev@example.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Available for Remote &amp; Hybrid roles</p>
+          <div class="footer-socials">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://figma.com" target="_blank" rel="noopener noreferrer" aria-label="Figma"><i class="fa-brands fa-figma"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Vanshika. Built with Clean Code &amp; Pixel-Perfect Craft.</p>
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT CASE STUDY MODAL -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog glass-panel">
+      <button class="modal-close icon-btn" id="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" id="modal-content-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME OVERVIEW MODAL -->
+  <div class="modal-overlay" id="resume-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog glass-panel resume-modal-dialog">
+      <button class="modal-close icon-btn" id="resume-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="resume-modal-header">
+        <div class="resume-badge-group">
+          <span class="tag"><i class="fa-solid fa-certificate"></i> Verified Profile</span>
+          <span class="tag"><i class="fa-solid fa-trophy"></i> Hackathon Champion</span>
+        </div>
+        <h2>Vanshika — Curriculum Vitae</h2>
+        <p>Full Stack Developer | UI/UX Designer | BCA Scholar</p>
+      </div>
+      <div class="resume-modal-body">
+        <div class="resume-section">
+          <h4><i class="fa-solid fa-user-graduate"></i> Academic Overview</h4>
+          <p><strong>Degree:</strong> Bachelor of Computer Applications (BCA)</p>
+          <p><strong>Core Focus:</strong> C Systems, Python Architecture, Data Structures, Modern Full Stack Web.</p>
+        </div>
+        <div class="resume-section">
+          <h4><i class="fa-solid fa-trophy"></i> Key Accolades</h4>
+          <ul>
+            <li>Grand Winner (1st / 450+ Teams) — OmniPulse Global Hackathon 2025.</li>
+            <li>1st Place National Trophy — Smart ResQ Emergency Dispatcher Hackathon.</li>
+            <li>Best UI/UX Design Category Award — HackNova International 2024.</li>
+            <li>Top 3 Finalist — National CodeCraft Algorithmic Championship.</li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <h4><i class="fa-solid fa-code"></i> Technical Toolkit</h4>
+          <p><strong>Languages:</strong> C, Python, JavaScript (ES6+), TypeScript, SQL.</p>
+          <p><strong>Frontend:</strong> React.js, Tailwind CSS, HTML5, CSS3, Next.js basics.</p>
+          <p><strong>UI/UX:</strong> Figma (Design Systems, Prototyping, Wireframing, User Flow).</p>
+          <p><strong>Backend:</strong> Node.js, Express, FastAPI, Flask, PostgreSQL, MongoDB.</p>
+        </div>
+      </div>
+      <div class="resume-modal-footer">
+        <button class="btn btn-primary" id="download-cv-btn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download PDF Resume</span>
+        </button>
+        <button class="btn btn-outline" id="print-cv-btn">
+          <i class="fa-solid fa-print"></i>
+          <span>Print Summary</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
+
